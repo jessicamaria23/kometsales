@@ -1,0 +1,22 @@
+<div class="col">
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">
+      Editar nombre producto - El Cafetal
+    </a>
+  </nav>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="form-group groupEditProduct">
+      <label for="productName">Nombre producto:</label>
+      <input formControlName="productName" placeholder="Nombre" name="productName" class="form-control" id="productName" required>
+    </div>
+
+    <div class="invisible">
+      <input formControlName="unitValue" name="unitValue" aria-hidden="true" id="unitValue">
+      <input formControlName="datePurchase" name="datePurchase" aria-hidden="true" id="datePurchase">
+      <input formControlName="isPerishable" name="isPerishable" aria-hidden="true" id="isPerishable">
+    </div>
+
+    <button class="btn btn-success btnConfirm">Aceptar</button>
+    <button class="btn btn-primary" routerLink="list-product">Regresar</button>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">
+    Carga de archivos - El Cafetal
+  </a>
+</nav>
+<div class="form-group uploadDesign">
+  <label class="btn btn-default selectFileDesign">
+    <input type="file"accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" (change)="selectFile($event)">
+  </label>
+</div>
+<div class="form-group">
+  <button class="btn btn-success btnConfirm" [disabled]="!selectedFiles" (click)="upload()">Cargar archivo</button>
+  <button class="btn btn-primary" routerLink="list-product">Regresar</button>
+</div>

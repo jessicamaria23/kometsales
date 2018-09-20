@@ -1,0 +1,38 @@
+<div class="col">
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand">
+      Productos - El Cafetal
+    </a>
+  </nav>
+
+  <button class="btn btn-primary btnAddProduct" (click)="addProduct()">Agregar productos</button>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Nombre</th>
+        <th>Valor unitario</th>
+        <th>Es perecedero</th>
+        <th>Fecha de compra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td class="hidden">{{ product.id }}</td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.unitValue | currency:'CAD':'symbol-narrow':'4.2-2' }}</td>
+        <td>{{ product.isPerishable == 1 ? "Si":"No" }}</td>
+        <td>{{ product.datePurchase | date:'EEEE, dd / MMMM / yyyy' }}</td>
+        <td>
+        <button class="btn btn-success btnAction" (click)="editProduct(product)">
+          Editar
+        </button>
+        <button class="btn btn-danger" (click)="deleteProduct(product)">
+          Borrar
+        </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

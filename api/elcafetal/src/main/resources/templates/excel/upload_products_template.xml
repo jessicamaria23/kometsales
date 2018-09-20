@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<workbook>
+    <worksheet idx="0">
+    	<section startRow="0" endRow="0">
+        </section>
+        <loop startRow="1" endRow="1" items="products" var="product" varType="com.elcafetal.elcafetal.models.entity.Product">
+            <section startRow="2" endRow="100"> 
+                <mapping row="2" col="0" type="java.lang.String">product.productName</mapping>
+                <mapping row="2" col="1">product.unitValue</mapping>
+                <mapping row="2" col="2" type="java.lang.Boolean">product.isPerishable</mapping>
+                <mapping row="2" col="3" type="java.sql.Date">product.datePurchase</mapping>
+            </section>
+            <!-- Break cuando termine -->
+            <loopbreakcondition>
+			    <rowcheck offset="0">
+			    	<cellcheck offset="0" />
+			    </rowcheck>
+            </loopbreakcondition>
+        </loop>
+    </worksheet>
+</workbook>
